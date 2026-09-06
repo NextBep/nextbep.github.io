@@ -1,57 +1,59 @@
----
-layout: default
-title: BepInEx.Android — NextBep
----
-
-[← Back](../)
-
 # BepInEx.Android
 
-**Core BepInEx fork for Android Unity IL2CPP**
-
----
+A fork of [BepInEx](https://github.com/BepInEx/BepInEx) adapted for Android, providing modding support for Unity IL2CPP games on Android devices.
 
 ## Overview
 
-BepInEx.Android adapts BepInEx 6 for Android, enabling .NET plugins to run inside Unity IL2CPP games. It provides the injection chain, runtime container, and interop layer needed to load BepInEx plugins on Android devices.
+BepInEx.Android brings the full BepInEx modding framework to Android. It works by:
+
+1. Hooking into the game's ART runtime using Pine
+2. Launching CoreCLR (.NET runtime) inside the game process
+3. Loading BepInEx and all installed plugins
+
+## Features
+
+- Full BepInEx 6.0 compatibility
+- CoreCLR runtime integration
+- IL2CPP support via unstripped libunity
+- Plugin loading from game data directory
+- Harmony patching support
 
 ## Architecture
 
 ```
-Game Process
-  └─ BootstrapActivity (loader)
-       ├─ Pine hooks (Java method interception)
-       │   ├─ ClassLoaderHooks
-       │   ├─ PackageManagerHooks
-       │   └─ UnityPlayerHooks
-       ├─ NativeLoader (libfusion)
-       │   └─ il2cpp_init hook
-       ├─ CoreCLR runtime (.NET 10)
-       └─ BepInEx plugin loader
+┌─────────────────────────────────────┐
+│           Game Process              │
+├─────────────────────────────────────┤
+│  Pine (ART Hook Framework)         │
+│  ├── ClassLoader interception      │
+│  ├── Native library loading        │
+│  └── UnityPlayer initialization    │
+├─────────────────────────────────────┤
+│  libmain.so / libfusion.so         │
+│  └── il2cpp_init hook              │
+├─────────────────────────────────────┤
+│  CoreCLR (.NET Runtime)            │
+│  └── BepInEx Preloader             │
+├─────────────────────────────────────┤
+│  BepInEx Plugin System             │
+│  ├── Harmony patching              │
+│  ├── Plugin loading                │
+│  └── Config management             │
+└─────────────────────────────────────┘
 ```
 
-## Components
+## Requirements
 
-### Pine Hooks
-
-ART Java method hook framework used for runtime interception:
-
-- **ClassLoaderHooks** — Intercepts `ClassLoader.loadClass` to register BepInEx assemblies
-- **PackageManagerHooks** — Hooks `getPackageInfo` for game context setup
-- **UnityPlayerHooks** — Hooks Unity player lifecycle for injection timing
-
-### NativeLoader (libfusion)
-
-Native shared library that hooks `il2cpp_init` to bootstrap the BepInEx runtime inside the Unity process.
-
-### CoreCLR Runtime
-
-Microsoft .NET 10 runtime built from source with OpenSSL crypto backend, replacing BoringSSL to fix SIGSEGV crashes on Android 16 / Xiaomi HyperOS.
+- Android 9+ (API 28+)
+- arm64-v8a device
+- Unity IL2CPP game
 
 ## Source Code
 
-- [GitHub Repository](https://github.com/NextBep/BepInEx.Android)
+The source code is available on GitHub: [NextBep/BepInEx.Android](https://github.com/NextBep/BepInEx.Android)
 
----
+## Related Projects
 
-[← Back](../)
+- [BepInEx](https://github.com/BepInEx/BepInEx) - Original BepInEx framework
+- [Pine](https://github.com/nicene-nerd/Pine) - ART hook framework
+- [CoreCLR](https://github.com/dotnet/runtime) - .NET runtime
