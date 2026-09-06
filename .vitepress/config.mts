@@ -33,6 +33,7 @@ export default defineConfig({
             { text: 'Getting Started', link: '/guide/getting-started' },
             { text: 'Modpack Management', link: '/guide/modpacks' },
             { text: 'Configuration', link: '/guide/configuration' },
+            { text: 'Translations', link: '/guide/translations' },
             { text: 'Troubleshooting', link: '/guide/troubleshooting' },
           ]
         }
