@@ -5,7 +5,7 @@ export default defineConfig({
   description: 'BepInEx modding framework for Android',
   
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
   ],
 
   locales: {
@@ -119,7 +119,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.png',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/NextBep' }
     ],
