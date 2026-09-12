@@ -1,4 +1,10 @@
+---
+title: Configuration
+---
+
 # Configuration
+
+BepInEx Launcher provides both per-game and general settings to customize behavior.
 
 ## Per-Game Settings
 
@@ -13,9 +19,9 @@ Some games require an unstripped `libunity.so` for certain mods to work. This se
 
 To clear the downloaded libunity cache, go to **Settings → Clear libunity cache**.
 
-### Unity Kill Blocking
+### Block Unity Kill
 
-By default, the launcher does not block `UnityPlayer.kill()`. Some games may need this blocked to prevent crashes.
+By default, the launcher does not block `UnityPlayer.kill()`. Some games may need this blocked to prevent crashes during shutdown.
 
 - **Enabled**: Blocks `UnityPlayer.kill()` calls
 - **Disabled** (default): Allows normal kill behavior
@@ -27,11 +33,14 @@ By default, the launcher does not block `UnityPlayer.kill()`. Some games may nee
 On Android 12+, the launcher uses your system's dynamic color (Monet) to theme the app.
 
 - **Enabled** (default): Uses system dynamic colors
-- **Disabled**: Uses the default blue theme
+- **Disabled**: Uses the default teal theme (#00897B)
 
 ### Animations
 
 Toggle UI animations on or off. Disabling animations can improve performance on older devices.
+
+- **Enabled** (default): Smooth transitions throughout the UI
+- **Disabled**: No animations for faster interaction
 
 ## Debug Settings
 
@@ -44,6 +53,16 @@ If the game crashes, the launcher will detect it and offer to export diagnostics
 - System information
 
 You can also manually export diagnostics from **Settings → Export Diagnostics**.
+
+### Log Viewer
+
+Access the built-in log viewer to inspect BepInEx output:
+
+1. Go to **Settings → View Logs**
+2. Browse or filter log entries
+3. Copy or share logs as needed
+
+See [Log Viewer](./log-viewer.md) for more details.
 
 ## Updating
 

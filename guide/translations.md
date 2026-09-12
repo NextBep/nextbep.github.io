@@ -1,20 +1,24 @@
+---
+title: Translations
+---
+
 # Translations
 
-BepInEx Android Launcher 在 [Crowdin](https://crowdin.com/project/bepinex-android-launcher) 上进行翻译管理。
+BepInEx Android Launcher is translated by the community on [Crowdin](https://crowdin.com/project/bepinex-android-launcher).
 
-## 如何参与翻译
+## How to Contribute
 
-1. 访问 [Crowdin 项目页面](https://crowdin.com/project/bepinex-android-launcher)
-2. 登录或注册 Crowdin 账号
-3. 选择你要翻译的语言
-4. 翻译或校对字符串
-5. 提交你的翻译
+1. Visit the [Crowdin project page](https://crowdin.com/project/bepinex-android-launcher)
+2. Sign in or create a Crowdin account
+3. Select your language
+4. Translate or proofread strings
+5. Submit your translations
 
-## 支持的语言
+## Supported Languages
 
-| 语言 | 状态 |
-|------|------|
-| English | ✅ 原始语言 |
+| Language | Status |
+|----------|--------|
+| English | ✅ Base language |
 | 简体中文 | ✅ |
 | 繁體中文 | ✅ |
 | 日本語 | ✅ |
@@ -33,14 +37,22 @@ BepInEx Android Launcher 在 [Crowdin](https://crowdin.com/project/bepinex-andro
 | ไทย | ✅ |
 | Veneto | ✅ |
 
-## 翻译指南
+## Translation Guidelines
 
-- 保持技术术语一致（如 BepInEx、Unity、IL2CPP 等保留英文）
-- 保留所有 `%1$s`、`%1$d` 等格式占位符
-- 保留所有 XML 标签（如 `<b>`、`<i>`）
-- 翻译应自然流畅，符合目标语言的表达习惯
+- Keep technical terms consistent (e.g., BepInEx, Unity, IL2CPP should remain in English)
+- Preserve all `%1$s`, `%1$d` format placeholders exactly as they appear
+- Preserve all XML tags (e.g., `<b>`, `<i>`)
+- Translations should be natural and fluent in the target language
+- Do not add or remove placeholder variables
 
-## 相关链接
+## Requesting a New Language
 
-- [Crowdin 项目](https://crowdin.com/project/bepinex-android-launcher)
-- [GitHub 仓库](https://github.com/NextBep/BepInEx.Android.Launcher)
+If your language is not listed:
+
+1. Check if it's already available on Crowdin
+2. If not, contact the maintainers on [GitHub](https://github.com/NextBep/BepInEx.Android.Launcher/issues) to request a new language
+
+## Related Links
+
+- [Crowdin Project](https://crowdin.com/project/bepinex-android-launcher)
+- [GitHub Repository](https://github.com/NextBep/BepInEx.Android.Launcher)

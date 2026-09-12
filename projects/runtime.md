@@ -1,26 +1,22 @@
-# Runtime
+---
+title: Runtime
+---
 
-A fork of [dotnet/runtime](https://github.com/dotnet/runtime) with Android-specific fixes for running .NET inside Unity game processes.
+# NextBep Runtime
+
+The mod runtime for BepInEx on Android.
 
 ## Overview
 
-The runtime fork provides the CoreCLR (.NET) runtime adapted for:
+The runtime provides the core infrastructure for loading and managing BepInEx plugins on Android devices.
 
-- Android ARM64 architecture
-- Running inside Unity game processes
-- Compatibility with BepInEx plugin system
+## Repository
 
-## Key Modifications
+[github.com/NextBep/NextBep](https://github.com/NextBep/NextBep)
 
-- Android-specific threading fixes
-- Memory management optimizations for game processes
-- Compatibility with Pine hook framework
-- Support for IL2CPP runtime environment
+## Features
 
-## Usage
-
-The runtime is automatically downloaded and extracted by the launcher when needed. You typically don't need to interact with it directly.
-
-## Source Code
-
-GitHub: [NextBep/runtime](https://github.com/NextBep/runtime)
+- Plugin loading and lifecycle management
+- BepInEx core services
+- Configuration system
+- Logging framework

@@ -1,3 +1,7 @@
+---
+title: Getting Started
+---
+
 # Getting Started
 
 ## Requirements
@@ -15,9 +19,10 @@ Download the latest release from [GitHub Releases](https://github.com/NextBep/Be
 ### Setup
 
 1. Install the APK on your Android device
-2. Open the launcher - it will automatically scan for installed Unity IL2CPP games
-3. Select a game and tap **Launch**
-4. The launcher will automatically download and extract the BepInEx framework on first run
+2. Grant **All files access** permission when prompted
+3. Open the launcher - it will automatically scan for installed Unity IL2CPP games
+4. Select a game and tap **Launch**
+5. The launcher will automatically download and extract the BepInEx framework on first run
 
 ## How It Works
 
@@ -54,6 +59,21 @@ On first launch for a game:
 5. Launches the game with BepInEx injected
 
 This process typically takes 10-30 seconds depending on your connection speed.
+
+## Launching with Mods
+
+1. Ensure you have a modpack configured (see [Modpack Management](./modpacks.md))
+2. Select the desired modpack from the modpack list
+3. Tap **Launch** to start the game with the active modpack's mods loaded
+
+## Launching without Mods
+
+To launch the game without any mods:
+
+1. Deselect the active modpack (tap the currently active modpack to deactivate it)
+2. Tap **Launch**
+
+The game will start normally without BepInEx injecting any mods.
 
 ## Updating
 
